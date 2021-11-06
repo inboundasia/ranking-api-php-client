@@ -1,0 +1,20 @@
+{
+    "name": "inboundasia/ranking-api-client",
+    "type": "library",
+    "description":"official Ranking API PHP Client",
+    "authors": [
+      {
+        "name": "Roli",
+        "email": "roli.chung@inboundmarketing.com.tw"
+      }
+    ],
+    "require": {
+      "ext-curl": "*"
+    },
+    "autoload": {
+      "psr-4": {
+          "InboundAsia\\RankingClient\\": "src/"
+      }
+    }
+  }
+  
