@@ -121,6 +121,25 @@ class RankingClient
         return $response;
     }
 
+    public function siteKeywordSync($siteId, array $keywords = [])
+    {
+        $params = [
+            'terms' => $keywords,
+        ];
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, self::BaseURL . "/sites/{$siteId}/keywords.sync");
+        curl_setopt($ch, CURLOPT_HTTPHEADER,
+            array_merge(self::GeneralHeaders, ['Authorization: Bearer ' . $this->apikey]));
+        curl_setopt($ch, CURLOPT_POST, TRUE);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($params));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+        $output = curl_exec($ch);
+        $response = json_decode($output);
+
+        return $response;
+    }
+
     public function deleteKeyword($keywordId)
     {
         $ch = curl_init();
