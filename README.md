@@ -37,6 +37,14 @@ $Client = new RankingClient($token);
 $response = $Client->siteRankings($SiteId, $SearchEngine);
 ```
 
+Update Site Ranking
+
+```
+$SiteId = 1474;
+$Client = new RankingClient($token);
+$response = $Client->updateSiteRanking($SiteId);
+```
+
 Add Keyword to Site
 
 ```

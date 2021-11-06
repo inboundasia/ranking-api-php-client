@@ -153,4 +153,17 @@ class RankingClient
 
         return $response;
     }
+
+    public function updateSiteRanking($siteId)
+    {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, self::BaseURL . "/update_site_ranking/{$siteId}");
+        curl_setopt($ch, CURLOPT_HTTPHEADER,
+            array_merge(self::GeneralHeaders, ['Authorization: Bearer ' . $this->apikey]));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $output = curl_exec($ch);
+        $response = json_decode($output);
+
+        return $response;
+    }
 }
