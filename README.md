@@ -46,6 +46,15 @@ $Client = new RankingClient($token);
 $response = $Client->siteKeywordStore($SiteId, $keyword);
 ```
 
+Site Keyword Sync
+
+```
+$SiteId = 1474;
+$Keywords = ['隱形牙套', '隱適美費用'];
+$Client = new RankingClient($token);
+$response = $Client->siteKeywordStore($SiteId, $keywords);
+```
+
 Delete Keyword
 
 ```
