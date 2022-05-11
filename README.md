@@ -70,3 +70,15 @@ $KeywordId = 24821;
 $Client = new RankingClient($token);
 $response = $Client->deleteKeyword($KeywordId);
 ```
+
+Query SERP Histories
+
+```
+$Client = new RankingClient($token);
+$response = $Client->serpHistories(
+    '2022-05-08',
+    'https://www.bnext.com.tw/article/68428/itri040602',
+    ['AMR趨勢'],
+    $exact = true
+);
+```
