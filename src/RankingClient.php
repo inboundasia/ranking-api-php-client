@@ -30,7 +30,7 @@ class RankingClient
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, self::BaseURL . '/sites');
         curl_setopt($ch, CURLOPT_HTTPHEADER,
-            array_merge(self::GeneralHeaders, ['Authorization: Bearer ' . $this->apikey]));
+            array_merge(self::GeneralHeaders, ['Authorization: ' . $this->apikey]));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $output = curl_exec($ch);
         $response = json_decode($output);
@@ -43,7 +43,7 @@ class RankingClient
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, self::BaseURL . "/sites/{$siteId}/keywords");
         curl_setopt($ch, CURLOPT_HTTPHEADER,
-            array_merge(self::GeneralHeaders, ['Authorization: Bearer ' . $this->apikey]));
+            array_merge(self::GeneralHeaders, ['Authorization: ' . $this->apikey]));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $output = curl_exec($ch);
         $response = json_decode($output);
@@ -58,7 +58,7 @@ class RankingClient
         $url = self::BaseURL . "/sites/{$siteId}/keywords_position?" . $query;
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_HTTPHEADER,
-            array_merge(self::GeneralHeaders, ['Authorization: Bearer ' . $this->apikey]));
+            array_merge(self::GeneralHeaders, ['Authorization: ' . $this->apikey]));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $output = curl_exec($ch);
         $response = json_decode($output);
@@ -73,7 +73,7 @@ class RankingClient
         $url = self::BaseURL . "/sites/{$siteId}/rankings?" . $query;
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_HTTPHEADER,
-            array_merge(self::GeneralHeaders, ['Authorization: Bearer ' . $this->apikey]));
+            array_merge(self::GeneralHeaders, ['Authorization: ' . $this->apikey]));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $output = curl_exec($ch);
         $response = json_decode($output);
@@ -92,7 +92,7 @@ class RankingClient
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, self::BaseURL . "/sites");
         curl_setopt($ch, CURLOPT_HTTPHEADER,
-            array_merge(self::GeneralHeaders, ['Authorization: Bearer ' . $this->apikey]));
+            array_merge(self::GeneralHeaders, ['Authorization: ' . $this->apikey]));
         curl_setopt($ch, CURLOPT_POST, TRUE);
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($params));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
@@ -111,7 +111,7 @@ class RankingClient
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, self::BaseURL . "/sites/{$siteId}/keywords");
         curl_setopt($ch, CURLOPT_HTTPHEADER,
-            array_merge(self::GeneralHeaders, ['Authorization: Bearer ' . $this->apikey]));
+            array_merge(self::GeneralHeaders, ['Authorization: ' . $this->apikey]));
         curl_setopt($ch, CURLOPT_POST, TRUE);
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($params));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
@@ -130,7 +130,7 @@ class RankingClient
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, self::BaseURL . "/sites/{$siteId}/keywords.sync");
         curl_setopt($ch, CURLOPT_HTTPHEADER,
-            array_merge(self::GeneralHeaders, ['Authorization: Bearer ' . $this->apikey]));
+            array_merge(self::GeneralHeaders, ['Authorization: ' . $this->apikey]));
         curl_setopt($ch, CURLOPT_POST, TRUE);
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($params));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
@@ -145,7 +145,7 @@ class RankingClient
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, self::BaseURL . "/keywords/{$keywordId}");
         curl_setopt($ch, CURLOPT_HTTPHEADER,
-            array_merge(self::GeneralHeaders, ['Authorization: Bearer ' . $this->apikey]));
+            array_merge(self::GeneralHeaders, ['Authorization: ' . $this->apikey]));
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
         $output = curl_exec($ch);
@@ -159,7 +159,7 @@ class RankingClient
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, self::BaseURL . "/update_site_ranking/{$siteId}");
         curl_setopt($ch, CURLOPT_HTTPHEADER,
-            array_merge(self::GeneralHeaders, ['Authorization: Bearer ' . $this->apikey]));
+            array_merge(self::GeneralHeaders, ['Authorization: ' . $this->apikey]));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $output = curl_exec($ch);
         $response = json_decode($output);
@@ -172,7 +172,7 @@ class RankingClient
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, self::BaseURL . "/serps_history");
         curl_setopt($ch, CURLOPT_HTTPHEADER,
-            array_merge(self::GeneralHeaders, ['Authorization: Bearer ' . $this->apikey]));
+            array_merge(self::GeneralHeaders, ['Authorization: ' . $this->apikey]));
         curl_setopt($ch, CURLOPT_POST, TRUE);
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(compact('date', 'url', 'term', 'exact')));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
